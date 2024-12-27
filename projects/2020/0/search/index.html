@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .links {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+        .links a {
+            margin-left: 10px;
+            text-decoration: none;
+            color: blue;
+        }
+        .search-box {
+            text-align: center;
+        }
+        input[type="text"] {
+            width: 50%;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"], input[type="button"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            background-color: #4285F4;
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, input[type="button"]:hover {
+            background-color: #357AE8;
+        }
+    </style>
+</head>
+<body>
+    <div class="links">
+        <a href="images.html">Image Search</a>
+        <a href="advanced.html">Advanced Search</a>
+    </div>
+    <div class="search-box">
+        <form action="https://www.google.com/search">
+            <input type="text" name="q" placeholder="Search Google">
+            <br>
+            <input type="submit" value="Google Search">
+            <input type="button" value="I'm Feeling Lucky" onclick="luckySearch()">
+        </form>
+    </div>
+    <script>
+        function luckySearch() {
+            const query = document.querySelector('input[name="q"]').value;
+            if (query) {
+                window.location.href = `https://www.google.com/search?q=${query}&btnI=I`;
+            }
+        }
+    </script>
+</body>
+</html>
